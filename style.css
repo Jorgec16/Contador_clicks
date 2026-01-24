@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Esto es vital */
+}
+body {
+    height: 100vh; /* Que ocupe el 100% de la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;     /* Centra horizontalmente */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    
+    /* Degradado moderno: va de un azul oscuro a un púrpura/gris */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    
+    /* Esto asegura que el fondo no se repita si la pantalla es muy grande */
+    background-attachment: fixed;
+    margin: 0;
+}
+.tarjeta {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* La sombra del cuadro */
+    text-align: center;
+    min-width: 320px;
+    border: 1px solid #e1e4e8; /* Un borde sutil */
+}
+
+#numero {
+    font-size: 100px; /* Lo subí un poco para que destaque */
+    margin: 10px 0 30px 0;
+    color: #000000;
+    display: block; /* Asegura que ocupe su propia línea */
+}
+
+.contenedor-botones {
+    display: flex;         /* Pone los botones en fila */
+    justify-content: center; 
+    gap: 15px;            /* Espacio exacto entre botones */
+}
+
+/* Mejora para los botones */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease; /* Transición suave para todo */
+}
+
+/* Efecto al pasar el mouse (Hover) */
+button:hover {
+    transform: translateY(-2px); /* El botón "salta" un poquito */
+    filter: brightness(1.1);
+}
+
+#btn-inc { background-color: #31ee37; color: white; }
+#btn-res { background-color: #ff2c1d; color: white; }
+/* Para Tablets (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .tarjeta {
+        width: 90%;          /* El cuadro ocupa casi todo el ancho */
+        padding: 30px 20px;  /* Reducimos el espacio interno */
+    }
+
+    #numero {
+        font-size: 70px;     /* Achicamos un poco el número */
+    }
+}
+
+/* Para Teléfonos (Pantallas menores a 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;   /* El título se adapta para no chocar */
+    }
+
+    .contenedor-botones {
+        flex-direction: column; /* ¡Truco Pro! Los botones se ponen uno arriba del otro */
+        width: 100%;
+    }
+
+    button {
+        width: 100%;         /* Los botones se estiran para que sean fáciles de tocar */
+        margin: 0;
+    }
+
+    #numero {
+        font-size: 60px;
+    }
+}
